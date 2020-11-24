@@ -107,3 +107,6 @@ for u in range(U):
     print("...    the test is over")
     training_log = logging_performance(training_log, counter, average_performance, write_to_disk=True)
     counter += 1
+
+# saving the last agent
+agent_ler.Q_t.save('./training-results/Q-target/trained-agents/last-agent')
