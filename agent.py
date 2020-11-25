@@ -166,6 +166,12 @@ class agent_learner:
         '''
         self.Q_t.set_weights(self.Q.get_weights())
 
+    def update_Q_to_Q_t(self):
+        '''
+        set the weights of Q to the weights of Q_t
+        '''
+        self.Q.set_weights(self.Q_t.get_weights())
+
     def action_based_on_Q_target(self, state, env, epsilon):
         '''
         takes an action based on the epsilon greedy policy using the Q-target

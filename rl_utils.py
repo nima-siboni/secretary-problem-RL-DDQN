@@ -161,13 +161,26 @@ def initial_filling_of_buffer(rounds_data_exploration, agent, main_buffer, env, 
     print("\n")
     return main_buffer
 
+def testing_performance(agent, nr_steps_test, env, details=False):
+    ''' runs a number of episodes and returns the results
 
-def testing_performance(agent, nr_steps_test, env):
-    ''' runs a number of episodes and returns the average performance'''
+    key arguments:
+    nr_steps_test -- number of testing episodes
+    details -- if False it only returns the average performance
+
+    returns:
+    the average performance (a scalar)
+    (if details = True) the number of steps for each episode (np array of length nr_steps_test)
+    (if details = True) the reward of each episode (np array of length nr_steps_test)
+    '''
 
     sum_performance = 0
 
     nr_features = env.observation_space.high.shape[0]
+
+    nr_steps_lst = np.zeros(nr_steps_test)
+
+    rewards_lst = np.zeros(nr_steps_test)
 
     print("...    the test is started")
 
@@ -184,10 +197,14 @@ def testing_performance(agent, nr_steps_test, env):
             performance += reward_t
             if test_id == 0:
                 env.render()
-
+        nr_steps_lst[test_id] = steps_t
+        rewards_lst[test_id] = reward_t
         sum_performance += performance
         # print("...          test #"+str(test_id)+" with performance "+str(performance))
 
     sum_performance /= nr_steps_test
 
-    return sum_performance
+    if details:
+        return sum_performance, nr_steps_lst, rewards_lst
+    else:
+        return sum_performance
