@@ -2,7 +2,7 @@
 
 ## Problem
 
-Here we address a modification of [the secretary problem](https://en.wikipedia.org/wiki/Secretary_problem), where the goal is to maximize *the expectation value* for the score of the hired applicant. 
+Here we address a modification of [the secretary problem](https://en.wikipedia.org/wiki/Secretary_problem), where the goal is to maximize *the expectation value* for the score of the hired applicant [this modification makes the rewards Markovian].
 
 An evironment, consisted with OpenAI Gym environment, is used for this project. This environment can be found [here](https://github.com/nima-siboni/secretary-problem-env/). In this environment the applicants are ranked by a random scores in range [0, 1]. 
 
