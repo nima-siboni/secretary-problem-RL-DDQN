@@ -12,7 +12,7 @@ Here we have implemented the DDQN approach with a network of 2-layers. Our resul
 
 <img src="./performance-and-animations/results.png" width="60%">
 
-This is a remarkable achievement, as the performance one can obtain using simple Monte-Carlo simulation is almost ```0.8``` (for ```N=20```; this experiment is done [here](https://github.com/nima-siboni/recruiter-problem). The reason that our agent can do better than that, could be traced back to the fact that in the secretary problem the secretary does not know anything about the candidates out there. In contrary, our agent had the opportunity to experience the candidate's distribution, together with experimenting to find the optimal stopping point.
+This is a remarkable achievement, as the performance one can obtain using simple Monte-Carlo simulation is almost ```0.8``` (for ```N=20```; this experiment is done [here](https://github.com/nima-siboni/recruiter-problem) ). The reason that our agent can do better than that, could be traced back to the fact that in the secretary problem the secretary does not know anything about the candidates out there. In contrary, our agent had the opportunity to experience the candidate's distribution, together with experimenting to find the optimal stopping point.
 
 ## Requirements
 
